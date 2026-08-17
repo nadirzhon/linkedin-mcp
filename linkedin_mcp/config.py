@@ -23,8 +23,10 @@ AUTH_URL = "https://www.linkedin.com/oauth/v2/authorization"
 TOKEN_URL = "https://www.linkedin.com/oauth/v2/accessToken"
 USERINFO_URL = "https://api.linkedin.com/v2/userinfo"
 POSTS_URL = "https://api.linkedin.com/rest/posts"
-# LinkedIn versions its REST API by month (YYYYMM). Bump when needed.
-LINKEDIN_VERSION = os.environ.get("LINKEDIN_API_VERSION", "202401")
+# LinkedIn versions its REST API by month (YYYYMM) and keeps only ~the last 12
+# months active — a stale value returns 426 NONEXISTENT_VERSION. Bump this (or
+# set LINKEDIN_API_VERSION) if publishing starts failing with that error.
+LINKEDIN_VERSION = os.environ.get("LINKEDIN_API_VERSION", "202608")
 
 # Scopes needed to post on your own profile and read your identity.
 SCOPES = "openid profile w_member_social"
