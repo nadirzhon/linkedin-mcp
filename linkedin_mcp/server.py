@@ -20,11 +20,11 @@ from __future__ import annotations
 
 import datetime as _dt
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server import MCPServer
 
 from . import client, content, store
 
-mcp = FastMCP("linkedin-mcp")
+mcp = MCPServer("linkedin-mcp", version="1.0.0")
 
 
 def _parse_when(when: str) -> float:
