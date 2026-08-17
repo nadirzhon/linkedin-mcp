@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linkedin-mcp"
+version = "1.0.0"
+description = "MCP server to publish and schedule posts on your own LinkedIn profile via the official API. Safe growth, no engagement bots."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "nadirzhon" }]
+keywords = ["mcp", "linkedin", "automation", "ai", "content", "social"]
+dependencies = ["mcp>=1.2.0"]
+
+[project.scripts]
+linkedin-mcp = "linkedin_mcp.server:main"
+
+[tool.setuptools.packages.find]
+include = ["linkedin_mcp*"]
